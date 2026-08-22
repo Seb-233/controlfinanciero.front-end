@@ -10,8 +10,8 @@ describe("DashboardView", () => {
   const mockAuth: AuthContextValue = {
     user: {
       id: "u-1",
-      email: "test@example.com",
-      displayName: "Sebastian G",
+      email: "usuario.demo@example.com",
+      displayName: "Usuario Demo",
       photoUrl: null,
     },
     isInitializing: false,
@@ -47,7 +47,7 @@ describe("DashboardView", () => {
     expect(screen.getAllByText("Nu").length).toBeGreaterThan(0);
 
     // Check greeting
-    expect(screen.getByText(/Hola, Sebastian/i)).toBeInTheDocument();
+    expect(screen.getByText(/Hola, Usuario/i)).toBeInTheDocument();
   });
 
   it("displays VOIDED transaction as voided but visible", async () => {
