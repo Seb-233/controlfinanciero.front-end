@@ -123,7 +123,7 @@ export class FirebaseAuthService implements AuthService {
 
 export const MOCK_USER: AuthUser = {
   id: "mock-user-1",
-  email: "usuario.demo@controlfinanciero.app",
+  email: "usuario.demo@example.com",
   displayName: "Usuario Demo",
   photoUrl: null,
 };

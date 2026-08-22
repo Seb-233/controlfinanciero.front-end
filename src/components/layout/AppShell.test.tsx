@@ -13,8 +13,8 @@ describe("AppShell", () => {
   const mockAuth: AuthContextValue = {
     user: {
       id: "u-1",
-      email: "sebastian@example.com",
-      displayName: "Sebastian G",
+      email: "usuario.demo@example.com",
+      displayName: "Usuario Demo",
       photoUrl: null,
     },
     isInitializing: false,

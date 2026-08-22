@@ -58,8 +58,8 @@ describe("AuthGuard", () => {
         isInitializing: false,
         user: {
           id: "u-1",
-          email: "test@example.com",
-          displayName: "Sebastian",
+          email: "usuario.prueba@example.com",
+          displayName: "Usuario Demo",
           photoUrl: null,
         },
       },
