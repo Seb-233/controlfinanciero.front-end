@@ -9,7 +9,7 @@ import { ExpirationStatus, ShortcutDeviceDto } from "@/types/shortcutDevices";
 const mockDevices: ShortcutDeviceDto[] = [
   {
     id: "dev-1",
-    name: "iPhone 15 Pro de Sebastian",
+    name: "iPhone principal",
     status: "ACTIVE",
     expirationStatus: "VALID",
     expiresAt: "2026-11-19T23:59:59-05:00",
