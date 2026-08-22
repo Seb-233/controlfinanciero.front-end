@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <clipPath id="rounded-nequi">
+      <rect width="512" height="512" rx="100" />
+    </clipPath>
+  </defs>
+  <g clip-path="url(#rounded-nequi)">
+    <rect width="512" height="512" fill="#FFFFFF" />
+    
+    <!-- Nequi Pink Square dot on top-left -->
+    <rect x="100" y="156" width="48" height="48" rx="8" fill="#FF007A" />
+
+    <!-- Nequi Deep Purple 'N' shape -->
+    <path
+      d="M174 168 C174 161 180 156 187 156 L233 156 C238 156 243 158 246 163 L324 286 L324 168 C324 161 330 156 337 156 L373 156 C380 156 386 161 386 168 L386 344 C386 351 380 356 373 356 L327 356 C322 356 317 354 314 349 L236 226 L236 344 C236 351 230 356 223 356 L187 356 C180 356 174 351 174 344 Z"
+      fill="#1A0224"
+    />
+  </g>
+</svg>

@@ -69,11 +69,11 @@ export default function ShortcutDevicesPage() {
       />
 
       {/* Security Notices / Information */}
-      <div className="rounded-xl border border-teal-200 bg-teal-50/50 p-4 sm:p-5">
-        <h2 className="text-sm font-semibold text-teal-900 mb-2">
+      <div className="rounded-xl border border-teal-200 dark:border-teal-900 bg-teal-50/50 dark:bg-teal-950/30 p-4 sm:p-5 transition-colors">
+        <h2 className="text-sm font-semibold text-teal-900 dark:text-teal-200 mb-2">
           Información de Seguridad del Atajo iOS
         </h2>
-        <ul className="list-disc list-inside text-xs text-teal-800 space-y-1.5">
+        <ul className="list-disc list-inside text-xs text-teal-800 dark:text-teal-300/90 space-y-1.5">
           <li>
             El <strong>token del dispositivo</strong> se mostrará únicamente una vez al crearlo por motivos de seguridad.
           </li>
@@ -99,7 +99,7 @@ export default function ShortcutDevicesPage() {
               <CardHeader className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
                 <div className="flex items-center gap-3">
                   <div
-                    className="w-10 h-10 rounded-xl bg-slate-100 flex items-center justify-center text-slate-700 shrink-0"
+                    className="w-10 h-10 rounded-xl bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-slate-700 dark:text-slate-300 shrink-0"
                     aria-hidden="true"
                   >
                     <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
@@ -124,28 +124,28 @@ export default function ShortcutDevicesPage() {
 
               <CardContent className="space-y-4">
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 text-xs">
-                  <div className="p-3 bg-slate-50 rounded-lg border border-slate-100">
-                    <span className="text-slate-500 block mb-1">Vencimiento del Token</span>
-                    <span className="font-semibold text-slate-800">
+                  <div className="p-3 bg-slate-50 dark:bg-slate-800/60 rounded-lg border border-slate-100 dark:border-slate-800">
+                    <span className="text-slate-500 dark:text-slate-400 block mb-1">Vencimiento del Token</span>
+                    <span className="font-semibold text-slate-800 dark:text-slate-200">
                       {formatDate(device.expiresAt)} ({device.daysUntilExpiration} días restantes)
                     </span>
                   </div>
 
-                  <div className="p-3 bg-slate-50 rounded-lg border border-slate-100">
-                    <span className="text-slate-500 block mb-1">Límite por transacción</span>
+                  <div className="p-3 bg-slate-50 dark:bg-slate-800/60 rounded-lg border border-slate-100 dark:border-slate-800">
+                    <span className="text-slate-500 dark:text-slate-400 block mb-1">Límite por transacción</span>
                     <CurrencyAmount amountMinor={device.maxExpenseMinor} size="sm" type="neutral" />
                   </div>
 
-                  <div className="p-3 bg-slate-50 rounded-lg border border-slate-100">
-                    <span className="text-slate-500 block mb-1">Último uso registrado</span>
-                    <span className="font-semibold text-slate-800">
+                  <div className="p-3 bg-slate-50 dark:bg-slate-800/60 rounded-lg border border-slate-100 dark:border-slate-800">
+                    <span className="text-slate-500 dark:text-slate-400 block mb-1">Último uso registrado</span>
+                    <span className="font-semibold text-slate-800 dark:text-slate-200">
                       {device.lastUsedAt ? formatDate(device.lastUsedAt) : "Sin uso registrado"}
                     </span>
                   </div>
                 </div>
 
                 {/* Actions (Prepared & Disabled) */}
-                <div className="flex items-center justify-end gap-2 pt-2 border-t border-slate-100">
+                <div className="flex items-center justify-end gap-2 pt-2 border-t border-slate-100 dark:border-slate-800">
                   <Button
                     variant="outline"
                     size="sm"

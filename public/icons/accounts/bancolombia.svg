@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <clipPath id="rounded">
+      <rect width="512" height="512" rx="100" />
+    </clipPath>
+  </defs>
+  <g clip-path="url(#rounded)">
+    <rect width="512" height="512" fill="#FFFFFF" />
+    
+    <!-- 3 Bancolombia Black/Dark Gray Iconic Bars -->
+    <g fill="#262626">
+      <!-- Top Bar -->
+      <rect x="156" y="90" width="206" height="94" rx="30" transform="rotate(-15 259 137)" />
+      <!-- Middle Bar -->
+      <rect x="110" y="196" width="298" height="94" rx="30" transform="rotate(-15 259 243)" />
+      <!-- Bottom Bar -->
+      <rect x="200" y="302" width="208" height="94" rx="30" transform="rotate(-15 304 349)" />
+    </g>
+
+    <!-- Bottom Left Colorful Curves -->
+    <!-- Yellow Outer Ring -->
+    <path d="M-10 290 A 330 330 0 0 1 290 540" fill="none" stroke="#FFCC00" stroke-width="26" stroke-linecap="round" />
+    <!-- Orange Middle Segment -->
+    <path d="M0 320 A 285 285 0 0 1 110 405" fill="none" stroke="#F15A24" stroke-width="32" stroke-linecap="round" />
+    <!-- Purple Inner Segment -->
+    <path d="M155 435 A 285 285 0 0 1 245 515" fill="none" stroke="#754C9E" stroke-width="32" stroke-linecap="round" />
+  </g>
+</svg>

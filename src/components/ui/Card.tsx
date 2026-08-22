@@ -7,7 +7,7 @@ export interface CardProps extends React.HTMLAttributes<HTMLDivElement> {
 export function Card({ children, className = "", ...props }: CardProps) {
   return (
     <div
-      className={`rounded-xl border border-slate-200/80 bg-white text-slate-900 shadow-xs ${className}`}
+      className={`rounded-xl border border-slate-200/80 dark:border-slate-800/80 bg-white dark:bg-slate-900 text-slate-900 dark:text-slate-100 shadow-xs transition-colors ${className}`}
       {...props}
     >
       {children}
@@ -17,7 +17,7 @@ export function Card({ children, className = "", ...props }: CardProps) {
 
 export function CardHeader({ children, className = "", ...props }: CardProps) {
   return (
-    <div className={`p-4 sm:p-5 flex flex-col gap-1 border-b border-slate-100 ${className}`} {...props}>
+    <div className={`p-4 sm:p-5 flex flex-col gap-1 border-b border-slate-100 dark:border-slate-800/60 ${className}`} {...props}>
       {children}
     </div>
   );
@@ -30,7 +30,7 @@ export function CardTitle({
   ...props
 }: CardProps & { as?: "h2" | "h3" | "h4" | "h5" | "h6" | "span" }) {
   return (
-    <Component className={`text-base font-semibold text-slate-900 ${className}`} {...props}>
+    <Component className={`text-base font-semibold text-slate-900 dark:text-slate-100 ${className}`} {...props}>
       {children}
     </Component>
   );
@@ -38,7 +38,7 @@ export function CardTitle({
 
 export function CardDescription({ children, className = "", ...props }: CardProps) {
   return (
-    <p className={`text-xs sm:text-sm text-slate-500 ${className}`} {...props}>
+    <p className={`text-xs sm:text-sm text-slate-500 dark:text-slate-400 ${className}`} {...props}>
       {children}
     </p>
   );

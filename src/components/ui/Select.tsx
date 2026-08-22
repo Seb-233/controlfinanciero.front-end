@@ -17,7 +17,7 @@ export const Select = React.forwardRef<HTMLSelectElement, SelectProps>(
     return (
       <div className="w-full flex flex-col gap-1.5">
         {label && (
-          <label htmlFor={selectId} className="text-xs font-semibold text-slate-700">
+          <label htmlFor={selectId} className="text-xs font-semibold text-slate-700 dark:text-slate-300">
             {label}
           </label>
         )}
@@ -26,8 +26,8 @@ export const Select = React.forwardRef<HTMLSelectElement, SelectProps>(
           id={selectId}
           aria-invalid={Boolean(error)}
           aria-describedby={error ? errorId : helperText ? helperId : undefined}
-          className={`w-full rounded-lg border bg-white px-3 py-2 text-sm text-slate-900 shadow-xs transition-colors focus-visible:outline-2 focus-visible:outline-teal-700 disabled:cursor-not-allowed disabled:bg-slate-50 disabled:text-slate-500 ${
-            error ? "border-red-500 focus-visible:outline-red-600" : "border-slate-300"
+          className={`w-full rounded-lg border bg-white dark:bg-slate-900 px-3 py-2 text-sm text-slate-900 dark:text-slate-100 shadow-xs transition-colors focus-visible:outline-2 focus-visible:outline-teal-700 disabled:cursor-not-allowed disabled:bg-slate-50 dark:disabled:bg-slate-800 disabled:text-slate-500 ${
+            error ? "border-red-500 focus-visible:outline-red-600" : "border-slate-300 dark:border-slate-700"
           } ${className}`}
           {...props}
         >

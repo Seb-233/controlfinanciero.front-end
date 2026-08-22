@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48" height="48">
+  <rect width="48" height="48" rx="12" fill="#0F766E" />
+  <!-- Cash Bill Symbol -->
+  <g transform="translate(8, 12)">
+    <rect x="2" y="2" width="28" height="20" rx="3" fill="#047857" stroke="#A7F3D0" stroke-width="2" />
+    <circle cx="16" cy="12" r="4.5" fill="#A7F3D0" />
+    <circle cx="6" cy="12" r="1.5" fill="#A7F3D0" />
+    <circle cx="26" cy="12" r="1.5" fill="#A7F3D0" />
+  </g>
+</svg>

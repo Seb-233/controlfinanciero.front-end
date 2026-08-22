@@ -63,7 +63,7 @@ export function MobileNavigation() {
 
   return (
     <nav
-      className="md:hidden fixed bottom-0 inset-x-0 bg-white border-t border-slate-200 z-30 pb-safe"
+      className="md:hidden fixed bottom-0 inset-x-0 bg-white/95 dark:bg-slate-900/95 backdrop-blur-xs border-t border-slate-200 dark:border-slate-800 z-30 pb-safe transition-colors"
       aria-label="Navegación móvil"
     >
       <div className="grid grid-cols-5 h-16">
@@ -74,11 +74,13 @@ export function MobileNavigation() {
               key={item.href}
               href={item.href}
               className={`flex flex-col items-center justify-center gap-1 min-h-[48px] select-none text-[10px] font-medium transition-colors ${
-                isActive ? "text-teal-700 font-semibold" : "text-slate-500 hover:text-slate-900"
+                isActive
+                  ? "text-teal-700 dark:text-teal-400 font-semibold"
+                  : "text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100"
               }`}
               aria-current={isActive ? "page" : undefined}
             >
-              <span className={isActive ? "text-teal-700" : "text-slate-400"} aria-hidden="true">
+              <span className={isActive ? "text-teal-700 dark:text-teal-400" : "text-slate-400 dark:text-slate-500"} aria-hidden="true">
                 {item.icon}
               </span>
               <span className="truncate max-w-[60px]">{item.label}</span>

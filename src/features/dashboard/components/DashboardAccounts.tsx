@@ -4,6 +4,7 @@ import { AccountDto, AccountType } from "@/types/accounts";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/Card";
 import { CurrencyAmount } from "@/components/ui/CurrencyAmount";
 import { Badge } from "@/components/ui/Badge";
+import { AccountLogo } from "@/components/ui/AccountLogo";
 
 export interface DashboardAccountsProps {
   accounts: AccountDto[];
@@ -34,7 +35,7 @@ export function DashboardAccounts({ accounts }: DashboardAccountsProps) {
       </CardHeader>
 
       <CardContent className="p-0">
-        <ul className="divide-y divide-slate-100" role="list">
+        <ul className="divide-y divide-slate-100 dark:divide-slate-800" role="list">
           {accounts.map((account) => {
             const typeConfig = accountTypeLabels[account.type] || accountTypeLabels.OTHER;
             const isCredit = account.type === "CREDIT_CARD";
@@ -42,18 +43,18 @@ export function DashboardAccounts({ accounts }: DashboardAccountsProps) {
             return (
               <li
                 key={account.id}
-                className="flex items-center justify-between p-4 hover:bg-slate-50/60 transition-colors"
+                className="flex items-center justify-between p-4 hover:bg-slate-50/60 dark:hover:bg-slate-800/40 transition-colors"
               >
                 <div className="flex items-center gap-3">
-                  <div
-                    className="w-9 h-9 rounded-lg flex items-center justify-center text-white text-xs font-bold shrink-0 shadow-2xs"
-                    style={{ backgroundColor: account.color || "#0f766e" }}
-                    aria-hidden="true"
-                  >
-                    {account.name.substring(0, 2).toUpperCase()}
-                  </div>
+                  <AccountLogo
+                    name={account.name}
+                    logoUrl={account.logoUrl}
+                    color={account.color}
+                    type={account.type}
+                    size="sm"
+                  />
                   <div className="flex flex-col">
-                    <span className="text-sm font-medium text-slate-900 leading-tight">
+                    <span className="text-sm font-medium text-slate-900 dark:text-slate-100 leading-tight">
                       {account.name}
                     </span>
                     <div className="flex items-center gap-1.5 mt-0.5">
@@ -71,7 +72,7 @@ export function DashboardAccounts({ accounts }: DashboardAccountsProps) {
                     type={isCredit ? (account.balanceMinor < 0 ? "expense" : "income") : "neutral"}
                   />
                   {isCredit && (
-                    <span className="text-[10px] text-slate-500">
+                    <span className="text-[10px] text-slate-500 dark:text-slate-400">
                       {account.balanceMinor < 0 ? "Saldo a pagar" : "A favor"}
                     </span>
                   )}
