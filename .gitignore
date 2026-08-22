@@ -39,6 +39,9 @@ next-env.d.ts
 .vscode/
 .gemini/
 .antigravity/
+.agents/
+.codex/
+.claude/
 
 # Logs
 *.log
