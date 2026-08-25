@@ -99,7 +99,7 @@ export default function ShortcutDevicesPage() {
               <CardHeader className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
                 <div className="flex items-center gap-3">
                   <div
-                    className="w-10 h-10 rounded-xl bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-slate-700 dark:text-slate-300 shrink-0"
+                    className="w-10 h-10 rounded-xl bg-slate-100 dark:bg-[#222226] flex items-center justify-center text-slate-700 dark:text-zinc-300 shrink-0"
                     aria-hidden="true"
                   >
                     <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
@@ -124,28 +124,28 @@ export default function ShortcutDevicesPage() {
 
               <CardContent className="space-y-4">
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 text-xs">
-                  <div className="p-3 bg-slate-50 dark:bg-slate-800/60 rounded-lg border border-slate-100 dark:border-slate-800">
-                    <span className="text-slate-500 dark:text-slate-400 block mb-1">Vencimiento del Token</span>
-                    <span className="font-semibold text-slate-800 dark:text-slate-200">
+                  <div className="p-3 bg-slate-50 dark:bg-[#1f1f23] rounded-lg border border-slate-100 dark:border-[#27272a]">
+                    <span className="text-slate-500 dark:text-zinc-400 block mb-1">Vencimiento del Token</span>
+                    <span className="font-semibold text-slate-800 dark:text-zinc-200">
                       {formatDate(device.expiresAt)} ({device.daysUntilExpiration} días restantes)
                     </span>
                   </div>
 
-                  <div className="p-3 bg-slate-50 dark:bg-slate-800/60 rounded-lg border border-slate-100 dark:border-slate-800">
-                    <span className="text-slate-500 dark:text-slate-400 block mb-1">Límite por transacción</span>
+                  <div className="p-3 bg-slate-50 dark:bg-[#1f1f23] rounded-lg border border-slate-100 dark:border-[#27272a]">
+                    <span className="text-slate-500 dark:text-zinc-400 block mb-1">Límite por transacción</span>
                     <CurrencyAmount amountMinor={device.maxExpenseMinor} size="sm" type="neutral" />
                   </div>
 
-                  <div className="p-3 bg-slate-50 dark:bg-slate-800/60 rounded-lg border border-slate-100 dark:border-slate-800">
-                    <span className="text-slate-500 dark:text-slate-400 block mb-1">Último uso registrado</span>
-                    <span className="font-semibold text-slate-800 dark:text-slate-200">
+                  <div className="p-3 bg-slate-50 dark:bg-[#1f1f23] rounded-lg border border-slate-100 dark:border-[#27272a]">
+                    <span className="text-slate-500 dark:text-zinc-400 block mb-1">Último uso registrado</span>
+                    <span className="font-semibold text-slate-800 dark:text-zinc-200">
                       {device.lastUsedAt ? formatDate(device.lastUsedAt) : "Sin uso registrado"}
                     </span>
                   </div>
                 </div>
 
                 {/* Actions (Prepared & Disabled) */}
-                <div className="flex items-center justify-end gap-2 pt-2 border-t border-slate-100 dark:border-slate-800">
+                <div className="flex items-center justify-end gap-2 pt-2 border-t border-slate-100 dark:border-[#27272a]">
                   <Button
                     variant="outline"
                     size="sm"

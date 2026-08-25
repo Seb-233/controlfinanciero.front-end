@@ -17,7 +17,7 @@ export function AppLogo({ href = "/app", className = "", showTagline = false }: 
         CF
       </div>
       <div className="flex flex-col">
-        <span className="text-base font-bold tracking-tight text-slate-900 dark:text-slate-100 leading-tight">
+        <span className="text-base font-bold tracking-tight text-slate-900 dark:text-zinc-100 leading-tight">
           Control Financiero
         </span>
         {showTagline && (

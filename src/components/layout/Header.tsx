@@ -9,7 +9,7 @@ import { env } from "@/lib/env/env";
 
 export function Header() {
   return (
-    <header className="sticky top-0 z-20 h-16 bg-white/95 dark:bg-slate-900/95 backdrop-blur-xs border-b border-slate-200/80 dark:border-slate-800 px-4 sm:px-6 flex items-center justify-between transition-colors">
+    <header className="sticky top-0 z-20 h-16 bg-white/95 dark:bg-[#121215]/95 backdrop-blur-xs border-b border-slate-200/80 dark:border-[#27272a] px-4 sm:px-6 flex items-center justify-between transition-colors">
       {/* Mobile Logo */}
       <div className="flex items-center gap-3 md:hidden">
         <AppLogo />
@@ -17,7 +17,7 @@ export function Header() {
 
       {/* Desktop Section / Context */}
       <div className="hidden md:flex items-center gap-3">
-        <span className="text-xs uppercase tracking-wider font-semibold text-slate-600 dark:text-slate-400">
+        <span className="text-xs uppercase tracking-wider font-semibold text-slate-600 dark:text-zinc-400">
           Espacio Personal
         </span>
         {env.NEXT_PUBLIC_USE_MOCKS && (
@@ -28,7 +28,7 @@ export function Header() {
       {/* Header Actions */}
       <div className="flex items-center gap-2 sm:gap-3">
         <ThemeToggle variant="icon" />
-        <div className="h-5 w-px bg-slate-200 dark:bg-slate-700 hidden sm:block" aria-hidden="true" />
+        <div className="h-5 w-px bg-slate-200 dark:bg-zinc-800 hidden sm:block" aria-hidden="true" />
         <UserMenu />
       </div>
     </header>

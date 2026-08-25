@@ -66,10 +66,10 @@ export function Sidebar() {
   const pathname = usePathname();
 
   return (
-    <aside className="hidden md:flex md:w-64 md:flex-col md:fixed md:inset-y-0 bg-white dark:bg-slate-900 border-r border-slate-200 dark:border-slate-800 z-30 transition-colors">
+    <aside className="hidden md:flex md:w-64 md:flex-col md:fixed md:inset-y-0 bg-white dark:bg-[#121215] border-r border-slate-200 dark:border-[#27272a] z-30 transition-colors">
       <div className="flex flex-col h-full">
         {/* Header Logo */}
-        <div className="h-16 flex items-center px-6 border-b border-slate-100 dark:border-slate-800">
+        <div className="h-16 flex items-center px-6 border-b border-slate-100 dark:border-[#27272a]">
           <AppLogo showTagline />
         </div>
 
@@ -84,11 +84,11 @@ export function Sidebar() {
                 className={`flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium transition-colors ${
                   isActive
                     ? "bg-teal-50 dark:bg-teal-950/50 text-teal-800 dark:text-teal-300 font-semibold"
-                    : "text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800/60 hover:text-slate-900 dark:hover:text-slate-100"
+                    : "text-slate-600 dark:text-zinc-400 hover:bg-slate-50 dark:hover:bg-zinc-800/50 hover:text-slate-900 dark:hover:text-zinc-100"
                 }`}
                 aria-current={isActive ? "page" : undefined}
               >
-                <span className={isActive ? "text-teal-700 dark:text-teal-400" : "text-slate-400 dark:text-slate-500"} aria-hidden="true">
+                <span className={isActive ? "text-teal-700 dark:text-teal-400" : "text-slate-400 dark:text-zinc-500"} aria-hidden="true">
                   {item.icon}
                 </span>
                 <span>{item.label}</span>
@@ -99,7 +99,7 @@ export function Sidebar() {
 
         {/* Environment / Mock Mode info */}
         {env.NEXT_PUBLIC_USE_MOCKS && (
-          <div className="p-4 border-t border-slate-100 dark:border-slate-800 bg-amber-50/50 dark:bg-amber-950/20 m-3 rounded-lg border border-amber-200/60 dark:border-amber-900/40">
+          <div className="p-4 border-t border-slate-100 dark:border-[#27272a] bg-amber-50/50 dark:bg-amber-950/20 m-3 rounded-lg border border-amber-200/60 dark:border-amber-900/40">
             <div className="flex items-center gap-2 mb-1">
               <Badge variant="warning">Modo Mock Activo</Badge>
             </div>

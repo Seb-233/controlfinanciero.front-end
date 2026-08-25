@@ -36,7 +36,7 @@ export default function AccountsPage() {
           const isCredit = account.type === "CREDIT_CARD";
 
           return (
-            <Card key={account.id} className="hover:border-slate-300 dark:hover:border-slate-700 transition-colors">
+            <Card key={account.id} className="hover:border-slate-300 dark:hover:border-[#3f3f46] transition-colors">
               <CardContent className="p-5 flex flex-col justify-between h-full">
                 <div className="flex items-start justify-between mb-4">
                   <div className="flex items-center gap-3">
@@ -48,8 +48,8 @@ export default function AccountsPage() {
                       size="md"
                     />
                     <div>
-                      <h2 className="text-base font-semibold text-slate-900 dark:text-slate-100">{account.name}</h2>
-                      <span className="text-xs text-slate-500 dark:text-slate-400">{accountTypeNames[account.type]}</span>
+                      <h2 className="text-base font-semibold text-slate-900 dark:text-zinc-100">{account.name}</h2>
+                      <span className="text-xs text-slate-500 dark:text-zinc-400">{accountTypeNames[account.type]}</span>
                     </div>
                   </div>
                   <Badge variant={isCredit ? "warning" : "info"} className="text-[10px]">
@@ -57,9 +57,9 @@ export default function AccountsPage() {
                   </Badge>
                 </div>
 
-                <div className="pt-3 border-t border-slate-100 dark:border-slate-800 flex items-end justify-between">
+                <div className="pt-3 border-t border-slate-100 dark:border-[#27272a] flex items-end justify-between">
                   <div className="flex flex-col">
-                    <span className="text-[11px] text-slate-500 dark:text-slate-400">
+                    <span className="text-[11px] text-slate-500 dark:text-zinc-400">
                       {isCredit ? "Saldo adeudado" : "Balance disponible"}
                     </span>
                     <CurrencyAmount
@@ -69,7 +69,7 @@ export default function AccountsPage() {
                     />
                   </div>
 
-                  <Button variant="ghost" size="sm" disabled className="text-xs text-slate-400 dark:text-slate-500">
+                  <Button variant="ghost" size="sm" disabled className="text-xs text-slate-400 dark:text-zinc-500">
                     Detalles
                   </Button>
                 </div>

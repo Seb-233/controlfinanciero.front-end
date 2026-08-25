@@ -32,15 +32,15 @@
 }
 
 .dark {
-  --background: #0b0f19;
-  --background-secondary: #111827;
-  --surface: #151e2e;
-  --surface-hover: #1e293b;
-  --border: #243046;
-  --border-subtle: #1a2436;
-  --text-primary: #f8fafc;
-  --text-secondary: #cbd5e1;
-  --text-muted: #94a3b8;
+  --background: #09090b;
+  --background-secondary: #121215;
+  --surface: #18181b;
+  --surface-hover: #222226;
+  --border: #27272a;
+  --border-subtle: #1e1e22;
+  --text-primary: #f4f4f5;
+  --text-secondary: #a1a1aa;
+  --text-muted: #71717a;
   --primary: #14b8a6;
   --primary-hover: #2dd4bf;
   --primary-light: #134e4a;

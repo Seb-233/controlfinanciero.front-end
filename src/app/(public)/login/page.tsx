@@ -34,7 +34,7 @@ export default function LoginPage() {
   };
 
   return (
-    <div className="min-h-screen bg-slate-50 dark:bg-slate-950 flex flex-col justify-center py-12 sm:px-6 lg:px-8 relative transition-colors duration-150">
+    <div className="min-h-screen bg-slate-50 dark:bg-[#09090b] flex flex-col justify-center py-12 sm:px-6 lg:px-8 relative transition-colors duration-150">
       {/* Top right theme toggle */}
       <div className="absolute top-4 right-4 sm:top-6 sm:right-6">
         <ThemeToggle variant="icon" />
@@ -44,16 +44,16 @@ export default function LoginPage() {
         <div className="flex justify-center mb-4">
           <AppLogo href="" showTagline />
         </div>
-        <h1 className="text-xl sm:text-2xl font-bold tracking-tight text-slate-900 dark:text-slate-100 mb-1">
+        <h1 className="text-xl sm:text-2xl font-bold tracking-tight text-slate-900 dark:text-zinc-100 mb-1">
           Bienvenido a Control Financiero
         </h1>
-        <p className="text-xs sm:text-sm text-slate-500 dark:text-slate-400 max-w-sm mx-auto">
+        <p className="text-xs sm:text-sm text-slate-500 dark:text-zinc-400 max-w-sm mx-auto">
           Gestiona tus cuentas, ingresos y gastos de forma organizada, accesible y segura.
         </p>
       </div>
 
       <div className="mt-8 sm:mx-auto sm:w-full sm:max-w-md px-4">
-        <Card className="shadow-md border-slate-200 dark:border-slate-800">
+        <Card className="shadow-md border-slate-200 dark:border-[#27272a]">
           <CardContent className="p-6 sm:p-8 space-y-6">
             {/* Error Banner with aria-live */}
             {error && (
@@ -82,7 +82,7 @@ export default function LoginPage() {
               type="button"
               variant="outline"
               size="lg"
-              className="w-full justify-center bg-white dark:bg-slate-800 hover:bg-slate-50 dark:hover:bg-slate-700 text-slate-700 dark:text-slate-200 font-semibold border-slate-300 dark:border-slate-700 py-3 shadow-xs"
+              className="w-full justify-center bg-white dark:bg-[#1f1f23] hover:bg-slate-50 dark:hover:bg-[#27272a] text-slate-700 dark:text-zinc-200 font-semibold border-slate-300 dark:border-[#333338] py-3 shadow-xs"
               onClick={handleGoogleLogin}
               isLoading={isSubmitting || isInitializing}
               leftIcon={
@@ -109,8 +109,8 @@ export default function LoginPage() {
               Continuar con Google
             </Button>
 
-            <div className="pt-4 border-t border-slate-100 dark:border-slate-800 text-center">
-              <p className="text-[11px] text-slate-400 dark:text-slate-500">
+            <div className="pt-4 border-t border-slate-100 dark:border-[#27272a] text-center">
+              <p className="text-[11px] text-slate-400 dark:text-zinc-500">
                 La autenticación utiliza Firebase Auth. Tus datos y autorizaciones financieras son administradas exclusivamente por el backend del sistema.
               </p>
             </div>

@@ -29,7 +29,7 @@ export function ThemeToggle({ variant = "icon", className = "" }: ThemeTogglePro
   if (variant === "segmented") {
     return (
       <div
-        className={`inline-flex items-center p-1 rounded-xl bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 ${className}`}
+        className={`inline-flex items-center p-1 rounded-xl bg-slate-100 dark:bg-[#1f1f23] border border-slate-200 dark:border-[#3f3f46]/60 ${className}`}
         role="group"
         aria-label="Seleccionar tema"
       >
@@ -38,8 +38,8 @@ export function ThemeToggle({ variant = "icon", className = "" }: ThemeTogglePro
           onClick={() => setTheme("light")}
           className={`flex items-center gap-1.5 px-2.5 py-1 text-xs font-medium rounded-lg transition-colors ${
             theme === "light"
-              ? "bg-white dark:bg-slate-700 text-slate-900 dark:text-white shadow-2xs"
-              : "text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white"
+              ? "bg-white dark:bg-[#27272a] text-slate-900 dark:text-white shadow-2xs"
+              : "text-slate-600 dark:text-zinc-400 hover:text-slate-900 dark:hover:text-white"
           }`}
           aria-pressed={theme === "light"}
         >
@@ -52,8 +52,8 @@ export function ThemeToggle({ variant = "icon", className = "" }: ThemeTogglePro
           onClick={() => setTheme("dark")}
           className={`flex items-center gap-1.5 px-2.5 py-1 text-xs font-medium rounded-lg transition-colors ${
             theme === "dark"
-              ? "bg-white dark:bg-slate-700 text-slate-900 dark:text-white shadow-2xs"
-              : "text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white"
+              ? "bg-white dark:bg-[#27272a] text-slate-900 dark:text-white shadow-2xs"
+              : "text-slate-600 dark:text-zinc-400 hover:text-slate-900 dark:hover:text-white"
           }`}
           aria-pressed={theme === "dark"}
         >
@@ -66,8 +66,8 @@ export function ThemeToggle({ variant = "icon", className = "" }: ThemeTogglePro
           onClick={() => setTheme("system")}
           className={`flex items-center gap-1.5 px-2.5 py-1 text-xs font-medium rounded-lg transition-colors ${
             theme === "system"
-              ? "bg-white dark:bg-slate-700 text-slate-900 dark:text-white shadow-2xs"
-              : "text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white"
+              ? "bg-white dark:bg-[#27272a] text-slate-900 dark:text-white shadow-2xs"
+              : "text-slate-600 dark:text-zinc-400 hover:text-slate-900 dark:hover:text-white"
           }`}
           aria-pressed={theme === "system"}
         >
@@ -84,7 +84,7 @@ export function ThemeToggle({ variant = "icon", className = "" }: ThemeTogglePro
         <button
           type="button"
           onClick={() => setIsOpen(!isOpen)}
-          className="flex items-center justify-between w-full px-3 py-2 text-xs font-medium text-slate-700 dark:text-slate-300 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors"
+          className="flex items-center justify-between w-full px-3 py-2 text-xs font-medium text-slate-700 dark:text-zinc-300 rounded-lg hover:bg-slate-100 dark:hover:bg-[#222226] transition-colors"
           aria-haspopup="true"
           aria-expanded={isOpen}
         >
@@ -100,7 +100,7 @@ export function ThemeToggle({ variant = "icon", className = "" }: ThemeTogglePro
         </button>
 
         {isOpen && (
-          <div className="absolute right-0 bottom-full mb-1 w-40 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-lg py-1 z-50">
+          <div className="absolute right-0 bottom-full mb-1 w-40 rounded-xl bg-white dark:bg-[#18181b] border border-slate-200 dark:border-[#27272a] shadow-lg py-1 z-50">
             {(
               [
                 { mode: "light", label: "Claro", icon: SunIcon },
@@ -118,7 +118,7 @@ export function ThemeToggle({ variant = "icon", className = "" }: ThemeTogglePro
                 className={`flex items-center justify-between w-full px-3 py-2 text-xs transition-colors ${
                   theme === mode
                     ? "bg-teal-50 dark:bg-teal-950/40 text-teal-700 dark:text-teal-300 font-semibold"
-                    : "text-slate-700 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800/60"
+                    : "text-slate-700 dark:text-zinc-300 hover:bg-slate-50 dark:hover:bg-zinc-800/60"
                 }`}
               >
                 <span className="flex items-center gap-2">
@@ -139,7 +139,7 @@ export function ThemeToggle({ variant = "icon", className = "" }: ThemeTogglePro
     <button
       type="button"
       onClick={toggleTheme}
-      className={`p-2 rounded-lg text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-100 hover:bg-slate-100 dark:hover:bg-slate-800/80 transition-colors focus-visible:outline-2 focus-visible:outline-teal-600 ${className}`}
+      className={`p-2 rounded-lg text-slate-500 dark:text-zinc-400 hover:text-slate-900 dark:hover:text-zinc-100 hover:bg-slate-100 dark:hover:bg-zinc-800/80 transition-colors focus-visible:outline-2 focus-visible:outline-teal-600 ${className}`}
       title={resolvedTheme === "dark" ? "Cambiar a modo claro" : "Cambiar a modo oscuro"}
       aria-label={resolvedTheme === "dark" ? "Cambiar a modo claro" : "Cambiar a modo oscuro"}
     >

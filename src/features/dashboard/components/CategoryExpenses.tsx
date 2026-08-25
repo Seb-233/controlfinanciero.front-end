@@ -29,16 +29,16 @@ export function CategoryExpenses({ categories }: CategoryExpensesProps) {
         {categories.map((cat) => (
           <div key={cat.categoryId} className="flex flex-col gap-1.5">
             <div className="flex items-center justify-between text-xs font-medium">
-              <span className="text-slate-800 dark:text-slate-200 truncate max-w-[180px] sm:max-w-none">{cat.categoryName}</span>
+              <span className="text-slate-800 dark:text-zinc-200 truncate max-w-[180px] sm:max-w-none">{cat.categoryName}</span>
               <div className="flex items-center gap-2 shrink-0">
-                <span className="text-slate-500 dark:text-slate-400 text-[11px]">{formatPercent(cat.percentage)}</span>
+                <span className="text-slate-500 dark:text-zinc-400 text-[11px]">{formatPercent(cat.percentage)}</span>
                 <CurrencyAmount amountMinor={cat.amountMinor} size="xs" type="expense" />
               </div>
             </div>
 
             {/* Accessible Progress Bar */}
             <div
-              className="w-full bg-slate-100 dark:bg-slate-800 rounded-full h-2 overflow-hidden"
+              className="w-full bg-slate-100 dark:bg-[#222226] rounded-full h-2 overflow-hidden"
               role="progressbar"
               aria-valuenow={cat.percentage}
               aria-valuemin={0}
