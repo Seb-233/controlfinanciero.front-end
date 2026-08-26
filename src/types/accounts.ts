@@ -8,4 +8,5 @@ export interface AccountDto {
   currencyCode: string;
   color?: string;
   icon?: string;
+  logoUrl?: string;
 }

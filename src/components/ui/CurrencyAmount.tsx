@@ -36,7 +36,7 @@ export function CurrencyAmount({
   const isZero = amountMinor === 0;
 
   // Determine semantic color
-  let colorClass = "text-slate-900";
+  let colorClass = "text-slate-900 dark:text-zinc-100";
   let signPrefix = "";
 
   let resolvedType = type;
@@ -53,24 +53,24 @@ export function CurrencyAmount({
 
   switch (resolvedType) {
     case "income":
-      colorClass = "text-green-700";
+      colorClass = "text-green-700 dark:text-emerald-400";
       if (showSign && isPositive) signPrefix = "+";
       break;
     case "expense":
-      colorClass = "text-red-700";
+      colorClass = "text-red-700 dark:text-red-400";
       if (showSign && isPositive) signPrefix = "-";
       break;
     case "transfer":
-      colorClass = "text-blue-700";
+      colorClass = "text-blue-700 dark:text-sky-400";
       break;
     case "neutral":
     default:
-      colorClass = "text-slate-900";
+      colorClass = "text-slate-900 dark:text-zinc-100";
       break;
   }
 
   if (isZero) {
-    colorClass = "text-slate-600";
+    colorClass = "text-slate-600 dark:text-zinc-400";
     signPrefix = "";
   }
 

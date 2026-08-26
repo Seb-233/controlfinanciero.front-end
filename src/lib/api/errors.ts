@@ -132,3 +132,34 @@ export class ServerError extends ApiError {
     this.name = "ServerError";
   }
 }
+
+export interface SafeContractErrorDetails {
+  category?: string;
+  field?: string;
+  unexpectedKeys?: string[];
+  missingKeys?: string[];
+  [key: string]: unknown;
+}
+
+export class ResponseContractError extends ApiError {
+  constructor(
+    payloadOrMessage: Partial<ApiErrorPayload> | string = {},
+    details?: SafeContractErrorDetails
+  ) {
+    const normalizedPayload: Partial<ApiErrorPayload> =
+      typeof payloadOrMessage === "string"
+        ? { message: payloadOrMessage, details }
+        : payloadOrMessage;
+
+    super({
+      status: normalizedPayload.status ?? 502,
+      code: normalizedPayload.code ?? "INVALID_RESPONSE_CONTRACT",
+      message:
+        normalizedPayload.message ??
+        "La respuesta del servidor no cumple con el contrato esperado.",
+      details: normalizedPayload.details,
+      requestId: normalizedPayload.requestId,
+    });
+    this.name = "ResponseContractError";
+  }
+}

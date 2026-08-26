@@ -6,6 +6,7 @@ import { useAuth } from "@/features/auth/hooks/useAuth";
 import { AppLogo } from "@/components/ui/AppLogo";
 import { Button } from "@/components/ui/Button";
 import { Card, CardContent } from "@/components/ui/Card";
+import { ThemeToggle } from "@/components/ui/ThemeToggle";
 import { env } from "@/lib/env/env";
 
 export default function LoginPage() {
@@ -33,28 +34,33 @@ export default function LoginPage() {
   };
 
   return (
-    <div className="min-h-screen bg-slate-50 flex flex-col justify-center py-12 sm:px-6 lg:px-8">
+    <div className="min-h-screen bg-slate-50 dark:bg-[#09090b] flex flex-col justify-center py-12 sm:px-6 lg:px-8 relative transition-colors duration-150">
+      {/* Top right theme toggle */}
+      <div className="absolute top-4 right-4 sm:top-6 sm:right-6">
+        <ThemeToggle variant="icon" />
+      </div>
+
       <div className="sm:mx-auto sm:w-full sm:max-w-md px-4 text-center">
         <div className="flex justify-center mb-4">
           <AppLogo href="" showTagline />
         </div>
-        <h1 className="text-xl sm:text-2xl font-bold tracking-tight text-slate-900 mb-1">
+        <h1 className="text-xl sm:text-2xl font-bold tracking-tight text-slate-900 dark:text-zinc-100 mb-1">
           Bienvenido a Control Financiero
         </h1>
-        <p className="text-xs sm:text-sm text-slate-500 max-w-sm mx-auto">
+        <p className="text-xs sm:text-sm text-slate-500 dark:text-zinc-400 max-w-sm mx-auto">
           Gestiona tus cuentas, ingresos y gastos de forma organizada, accesible y segura.
         </p>
       </div>
 
       <div className="mt-8 sm:mx-auto sm:w-full sm:max-w-md px-4">
-        <Card className="shadow-md border-slate-200">
+        <Card className="shadow-md border-slate-200 dark:border-[#27272a]">
           <CardContent className="p-6 sm:p-8 space-y-6">
             {/* Error Banner with aria-live */}
             {error && (
               <div
                 role="alert"
                 aria-live="polite"
-                className="p-3.5 rounded-lg bg-red-50 border border-red-200 text-xs font-medium text-red-700 flex items-start gap-2.5"
+                className="p-3.5 rounded-lg bg-red-50 dark:bg-red-950/40 border border-red-200 dark:border-red-800/60 text-xs font-medium text-red-700 dark:text-red-300 flex items-start gap-2.5"
               >
                 <svg className="w-4 h-4 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                   <path strokeLinecap="round" strokeLinejoin="round" d="M12 9v3.75m9-.75a9 9 0 11-18 0 9 9 0 0118 0zm-9 3.75h.008v.008H12v-.008z" />
@@ -65,7 +71,7 @@ export default function LoginPage() {
 
             {/* Mock Mode Notice if active */}
             {env.NEXT_PUBLIC_USE_MOCKS && (
-              <div className="p-3 rounded-lg bg-amber-50 border border-amber-200 text-xs text-amber-800">
+              <div className="p-3 rounded-lg bg-amber-50 dark:bg-amber-950/30 border border-amber-200 dark:border-amber-900/50 text-xs text-amber-800 dark:text-amber-300">
                 <span className="font-semibold block mb-0.5">Modo Mock Activo (Entorno Local)</span>
                 Al hacer clic en &quot;Continuar con Google&quot; ingresarás de inmediato con una cuenta de prueba sin requerir credenciales externas.
               </div>
@@ -76,7 +82,7 @@ export default function LoginPage() {
               type="button"
               variant="outline"
               size="lg"
-              className="w-full justify-center bg-white hover:bg-slate-50 text-slate-700 font-semibold border-slate-300 py-3 shadow-xs"
+              className="w-full justify-center bg-white dark:bg-[#1f1f23] hover:bg-slate-50 dark:hover:bg-[#27272a] text-slate-700 dark:text-zinc-200 font-semibold border-slate-300 dark:border-[#333338] py-3 shadow-xs"
               onClick={handleGoogleLogin}
               isLoading={isSubmitting || isInitializing}
               leftIcon={
@@ -103,8 +109,8 @@ export default function LoginPage() {
               Continuar con Google
             </Button>
 
-            <div className="pt-4 border-t border-slate-100 text-center">
-              <p className="text-[11px] text-slate-400">
+            <div className="pt-4 border-t border-slate-100 dark:border-[#27272a] text-center">
+              <p className="text-[11px] text-slate-400 dark:text-zinc-500">
                 La autenticación utiliza Firebase Auth. Tus datos y autorizaciones financieras son administradas exclusivamente por el backend del sistema.
               </p>
             </div>
