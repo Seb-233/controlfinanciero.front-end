@@ -63,7 +63,7 @@ export function RecentTransactionsList({ transactions }: RecentTransactionsListP
       </CardHeader>
 
       <CardContent className="p-0">
-        <div className="divide-y divide-slate-100" role="list">
+        <div className="divide-y divide-slate-100 dark:divide-[#27272a]" role="list">
           {transactions.map((tx) => {
             const isVoided = tx.status === ("VOIDED" as TransactionStatus);
             const typeConfig = typeBadges[tx.type] || { label: tx.type, variant: "neutral" };
@@ -75,8 +75,8 @@ export function RecentTransactionsList({ transactions }: RecentTransactionsListP
               <div
                 key={tx.id}
                 data-testid={`tx-${tx.id}`}
-                className={`p-4 flex flex-col sm:flex-row sm:items-center justify-between gap-3 hover:bg-slate-50/60 transition-colors ${
-                  isVoided ? "opacity-60 bg-slate-50/40" : ""
+                className={`p-4 flex flex-col sm:flex-row sm:items-center justify-between gap-3 hover:bg-slate-50/60 dark:hover:bg-[#222226]/50 transition-colors ${
+                  isVoided ? "opacity-60 bg-slate-50/40 dark:bg-[#18181b]/40" : ""
                 }`}
               >
                 {/* Left: icon, description, accounts, source */}
@@ -84,12 +84,12 @@ export function RecentTransactionsList({ transactions }: RecentTransactionsListP
                   <div
                     className={`w-9 h-9 rounded-lg flex items-center justify-center shrink-0 mt-0.5 ${
                       isIncome
-                        ? "bg-green-100 text-green-700"
+                        ? "bg-green-100 dark:bg-emerald-950/60 text-green-700 dark:text-emerald-300"
                         : isExpense
-                        ? "bg-red-100 text-red-700"
+                        ? "bg-red-100 dark:bg-red-950/60 text-red-700 dark:text-red-300"
                         : isTransfer
-                        ? "bg-blue-100 text-blue-700"
-                        : "bg-amber-100 text-amber-700"
+                        ? "bg-blue-100 dark:bg-sky-950/60 text-blue-700 dark:text-sky-300"
+                        : "bg-amber-100 dark:bg-amber-950/60 text-amber-700 dark:text-amber-300"
                     }`}
                     aria-hidden="true"
                   >
@@ -118,14 +118,14 @@ export function RecentTransactionsList({ transactions }: RecentTransactionsListP
                   <div className="flex flex-col min-w-0">
                     <div className="flex items-center gap-2 flex-wrap">
                       <span
-                        className={`text-sm font-medium text-slate-900 truncate ${
-                          isVoided ? "line-through text-slate-500" : ""
+                        className={`text-sm font-medium text-slate-900 dark:text-zinc-100 truncate ${
+                          isVoided ? "line-through text-slate-500 dark:text-zinc-400" : ""
                         }`}
                       >
                         {tx.description}
                       </span>
                       {isVoided && (
-                        <Badge variant="neutral" className="text-[10px] bg-slate-200 text-slate-600">
+                        <Badge variant="neutral" className="text-[10px] bg-slate-200 dark:bg-[#27272a] text-slate-600 dark:text-zinc-300">
                           ANULADO
                         </Badge>
                       )}
@@ -134,9 +134,9 @@ export function RecentTransactionsList({ transactions }: RecentTransactionsListP
                       </Badge>
                     </div>
 
-                    <div className="flex items-center gap-2 text-xs text-slate-500 mt-1 flex-wrap">
+                    <div className="flex items-center gap-2 text-xs text-slate-500 dark:text-zinc-400 mt-1 flex-wrap">
                       {isTransfer ? (
-                        <span className="font-medium text-slate-700">
+                        <span className="font-medium text-slate-700 dark:text-zinc-300">
                           {tx.accountName} &rarr; {tx.destinationAccountName || "Destino"}
                         </span>
                       ) : (
@@ -146,15 +146,15 @@ export function RecentTransactionsList({ transactions }: RecentTransactionsListP
                       {tx.categoryName && (
                         <>
                           <span aria-hidden="true">&bull;</span>
-                          <span className="text-slate-600 truncate">{tx.categoryName}</span>
+                          <span className="text-slate-600 dark:text-zinc-300 truncate">{tx.categoryName}</span>
                         </>
                       )}
 
                       <span aria-hidden="true">&bull;</span>
-                      <span className="text-slate-400">{formatDate(tx.date)}</span>
+                      <span className="text-slate-400 dark:text-zinc-500">{formatDate(tx.date)}</span>
 
                       <span aria-hidden="true">&bull;</span>
-                      <span className="text-[10px] px-1.5 py-0.2 bg-slate-100 rounded text-slate-600">
+                      <span className="text-[10px] px-1.5 py-0.2 bg-slate-100 dark:bg-[#222226] rounded text-slate-600 dark:text-zinc-400 border border-slate-200 dark:border-[#27272a]">
                         {sourceLabels[tx.source] || tx.source}
                       </span>
                     </div>
@@ -178,7 +178,7 @@ export function RecentTransactionsList({ transactions }: RecentTransactionsListP
                     }
                     showSign={isIncome || isExpense}
                     size="sm"
-                    className={isVoided ? "line-through text-slate-400" : ""}
+                    className={isVoided ? "line-through text-slate-400 dark:text-zinc-500" : ""}
                   />
                 </div>
               </div>

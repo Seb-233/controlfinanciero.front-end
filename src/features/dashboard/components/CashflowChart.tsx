@@ -30,11 +30,11 @@ export function CashflowChart({ cashflow }: CashflowChartProps) {
           <div className="flex items-center gap-4 text-xs">
             <div className="flex items-center gap-1.5">
               <span className="w-3 h-3 rounded-xs bg-green-600 inline-block" aria-hidden="true" />
-              <span className="text-slate-600">Ingresos</span>
+              <span className="text-slate-600 dark:text-zinc-400">Ingresos</span>
             </div>
             <div className="flex items-center gap-1.5">
               <span className="w-3 h-3 rounded-xs bg-red-600 inline-block" aria-hidden="true" />
-              <span className="text-slate-600">Gastos</span>
+              <span className="text-slate-600 dark:text-zinc-400">Gastos</span>
             </div>
           </div>
         </div>
@@ -43,7 +43,7 @@ export function CashflowChart({ cashflow }: CashflowChartProps) {
       <CardContent>
         {/* Visual CSS Bar Chart */}
         <div className="pt-6 pb-2" aria-hidden="true">
-          <div className="grid grid-cols-6 gap-2 sm:gap-4 items-end h-48 border-b border-slate-200">
+          <div className="grid grid-cols-6 gap-2 sm:gap-4 items-end h-48 border-b border-slate-200 dark:border-[#27272a]">
             {cashflow.map((item) => {
               const incomeHeight = Math.max(Math.round((item.incomeMinor / maxAmount) * 100), 4);
               const expenseHeight = Math.max(Math.round((item.expenseMinor / maxAmount) * 100), 4);
@@ -53,18 +53,18 @@ export function CashflowChart({ cashflow }: CashflowChartProps) {
                   <div className="flex items-end gap-1 sm:gap-1.5 w-full max-w-[40px] justify-center h-full">
                     {/* Income Bar */}
                     <div
-                      className="w-full bg-green-600 rounded-t-sm transition-all duration-300 group-hover:bg-green-700"
+                      className="w-full bg-green-600 dark:bg-emerald-500 rounded-t-sm transition-all duration-300 group-hover:bg-green-700 dark:group-hover:bg-emerald-400"
                       style={{ height: `${incomeHeight}%` }}
                       title={`Ingresos ${item.monthLabel}: ${item.incomeMinor} COP`}
                     />
                     {/* Expense Bar */}
                     <div
-                      className="w-full bg-red-600 rounded-t-sm transition-all duration-300 group-hover:bg-red-700"
+                      className="w-full bg-red-600 dark:bg-red-500 rounded-t-sm transition-all duration-300 group-hover:bg-red-700 dark:group-hover:bg-red-400"
                       style={{ height: `${expenseHeight}%` }}
                       title={`Gastos ${item.monthLabel}: ${item.expenseMinor} COP`}
                     />
                   </div>
-                  <span className="text-[11px] font-medium text-slate-600 mt-2 truncate w-full text-center">
+                  <span className="text-[11px] font-medium text-slate-600 dark:text-zinc-400 mt-2 truncate w-full text-center">
                     {item.monthLabel}
                   </span>
                 </div>
@@ -78,17 +78,17 @@ export function CashflowChart({ cashflow }: CashflowChartProps) {
           <table className="w-full text-left text-xs" aria-label="Tabla de flujo de caja mensual">
             <caption className="sr-only">Resumen de ingresos, gastos y balance neto mensual</caption>
             <thead>
-              <tr className="border-b border-slate-100 text-slate-500 font-medium">
+              <tr className="border-b border-slate-100 dark:border-[#27272a] text-slate-500 dark:text-zinc-400 font-medium">
                 <th scope="col" className="py-2 pr-2">Mes</th>
                 <th scope="col" className="py-2 px-2 text-right">Ingresos</th>
                 <th scope="col" className="py-2 px-2 text-right">Gastos</th>
                 <th scope="col" className="py-2 pl-2 text-right">Ahorro Neto</th>
               </tr>
             </thead>
-            <tbody className="divide-y divide-slate-100">
+            <tbody className="divide-y divide-slate-100 dark:divide-[#27272a]">
               {cashflow.map((item) => (
-                <tr key={item.month} className="hover:bg-slate-50/50">
-                  <th scope="row" className="py-1.5 pr-2 font-medium text-slate-800">
+                <tr key={item.month} className="hover:bg-slate-50/50 dark:hover:bg-[#222226]/50 transition-colors">
+                  <th scope="row" className="py-1.5 pr-2 font-medium text-slate-800 dark:text-zinc-200">
                     {item.monthLabel}
                   </th>
                   <td className="py-1.5 px-2 text-right">

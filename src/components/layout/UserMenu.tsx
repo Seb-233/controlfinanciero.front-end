@@ -2,6 +2,7 @@
 
 import React, { useState, useRef, useEffect } from "react";
 import { useAuth } from "@/features/auth/hooks/useAuth";
+import { ThemeToggle } from "../ui/ThemeToggle";
 
 export function UserMenu() {
   const { user, logout } = useAuth();
@@ -51,24 +52,24 @@ export function UserMenu() {
         aria-expanded={isOpen}
         aria-haspopup="true"
         aria-label={`Menú de usuario: ${user.displayName || user.email}`}
-        className="flex items-center gap-2 p-1.5 rounded-lg hover:bg-slate-100 transition-colors focus-visible:outline-2 focus-visible:outline-teal-700 select-none"
+        className="flex items-center gap-2 p-1.5 rounded-lg hover:bg-slate-100 dark:hover:bg-zinc-800/60 transition-colors focus-visible:outline-2 focus-visible:outline-teal-700 select-none"
       >
         <div
-          className="w-8 h-8 rounded-full bg-teal-800 text-white flex items-center justify-center text-xs font-semibold shrink-0"
+          className="w-8 h-8 rounded-full bg-teal-800 dark:bg-teal-600 text-white flex items-center justify-center text-xs font-semibold shrink-0"
           aria-hidden="true"
         >
           {initials}
         </div>
         <div className="hidden sm:flex flex-col text-left">
-          <span className="text-xs font-medium text-slate-800 leading-tight">
+          <span className="text-xs font-medium text-slate-800 dark:text-zinc-200 leading-tight">
             {user.displayName || "Usuario"}
           </span>
-          <span className="text-[11px] text-slate-500 max-w-[140px] truncate leading-tight">
+          <span className="text-[11px] text-slate-500 dark:text-zinc-400 max-w-[140px] truncate leading-tight">
             {user.email}
           </span>
         </div>
         <svg
-          className={`w-4 h-4 text-slate-400 transition-transform ${isOpen ? "rotate-180" : ""}`}
+          className={`w-4 h-4 text-slate-400 dark:text-zinc-500 transition-transform ${isOpen ? "rotate-180" : ""}`}
           fill="none"
           viewBox="0 0 24 24"
           stroke="currentColor"
@@ -83,13 +84,20 @@ export function UserMenu() {
         <div
           role="menu"
           aria-orientation="vertical"
-          className="absolute right-0 mt-2 w-56 rounded-xl bg-white p-1.5 shadow-lg border border-slate-200 z-50 animate-in fade-in zoom-in-95 duration-100"
+          className="absolute right-0 mt-2 w-60 rounded-xl bg-white dark:bg-[#18181b] p-1.5 shadow-lg border border-slate-200 dark:border-[#27272a] z-50 animate-in fade-in zoom-in-95 duration-100"
         >
-          <div className="px-3 py-2 border-b border-slate-100">
-            <p className="text-xs font-semibold text-slate-900 truncate">
+          <div className="px-3 py-2 border-b border-slate-100 dark:border-[#27272a]">
+            <p className="text-xs font-semibold text-slate-900 dark:text-zinc-100 truncate">
               {user.displayName || "Usuario"}
             </p>
-            <p className="text-xs text-slate-500 truncate">{user.email}</p>
+            <p className="text-xs text-slate-500 dark:text-zinc-400 truncate">{user.email}</p>
+          </div>
+
+          <div className="p-2 border-b border-slate-100 dark:border-[#27272a]">
+            <span className="text-[10px] font-semibold uppercase tracking-wider text-slate-400 dark:text-zinc-500 block mb-1.5 px-1">
+              Tema de la interfaz
+            </span>
+            <ThemeToggle variant="segmented" className="w-full justify-between" />
           </div>
 
           <div className="py-1">
@@ -98,7 +106,7 @@ export function UserMenu() {
               role="menuitem"
               disabled={isLoggingOut}
               onClick={handleLogout}
-              className="w-full flex items-center gap-2 px-3 py-2 text-xs font-medium text-red-600 rounded-lg hover:bg-red-50 transition-colors focus-visible:outline-2 focus-visible:outline-red-600 disabled:opacity-50"
+              className="w-full flex items-center gap-2 px-3 py-2 text-xs font-medium text-red-600 dark:text-red-400 rounded-lg hover:bg-red-50 dark:hover:bg-red-950/40 transition-colors focus-visible:outline-2 focus-visible:outline-red-600 disabled:opacity-50"
             >
               <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                 <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 9V5.25A2.25 2.25 0 0013.5 3h-6a2.25 2.25 0 00-2.25 2.25v13.5A2.25 2.25 0 007.5 21h6a2.25 2.25 0 002.25-2.25V15m3 0l3-3m0 0l-3-3m3 3H9" />

@@ -23,6 +23,7 @@ export const MOCK_DASHBOARD_DATA: DashboardDataDto = {
       balanceMinor: 1000000,
       currencyCode: "COP",
       color: "#0f766e",
+      logoUrl: "/icons/accounts/bancolombia.svg",
     },
     {
       id: "acc-2",
@@ -31,6 +32,7 @@ export const MOCK_DASHBOARD_DATA: DashboardDataDto = {
       balanceMinor: 250000,
       currencyCode: "COP",
       color: "#7c3aed",
+      logoUrl: "/icons/accounts/nequi.svg",
     },
     {
       id: "acc-3",
@@ -39,6 +41,7 @@ export const MOCK_DASHBOARD_DATA: DashboardDataDto = {
       balanceMinor: 100000,
       currencyCode: "COP",
       color: "#16a34a",
+      logoUrl: "/icons/accounts/cash.svg",
     },
     {
       id: "acc-4",
@@ -47,6 +50,7 @@ export const MOCK_DASHBOARD_DATA: DashboardDataDto = {
       balanceMinor: -250000,
       currencyCode: "COP",
       color: "#9333ea",
+      logoUrl: "/icons/accounts/nu.svg",
     },
   ],
   cashflow: [
